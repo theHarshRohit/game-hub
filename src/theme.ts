@@ -6,7 +6,7 @@ const config:ThemeConfig ={
 
 const theme =extendTheme({
   config,
-  color:{
+  colors:{
     gray:{
       50:'#f9f9f9',
       100:'#ededed',
@@ -23,4 +23,4 @@ const theme =extendTheme({
   }
 })
 
-export default theme
+export default theme;
