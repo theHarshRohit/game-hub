@@ -21,23 +21,12 @@ interface Props {
 const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   const { data, isLoading, error } = useGenres();
   if (error) return null;
-  if (isLoading)
-    return (
-      <Stack>
-        <Skeleton height="35px" borderRadius={5} />
-        <Skeleton height="35px" borderRadius={5} />
-        <Skeleton height="35px" borderRadius={5} />
-        <Skeleton height="35px" borderRadius={5} />
-        <Skeleton height="35px" borderRadius={5} />
-        <Skeleton height="35px" borderRadius={5} />
-        <Skeleton height="35px" borderRadius={5} />
-      </Stack>
-    );
+  if (isLoading) return <Spinner />;
 
   return (
     <>
-      <Heading fontSize="2xl" marginBottom={5}>
-        Genres
+      <Heading fontSize="2xl" marginBottom={2}>
+        Genre
       </Heading>
       <List>
         {data.map((genre) => (
